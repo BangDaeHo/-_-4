@@ -45,14 +45,7 @@ public class MyPanel extends JPanel
         JTextArea Ta = new JTextArea(10, 24);
         this.add(Ta);
 
-        // 텍스트필드에 Enter, 키 입력 때 발생하는 Action 이벤트의 리스너 등록 
-        tf.addActionListener(new ActionListener() { 
-                public void actionPerformed(ActionEvent e) { 
-                    JTextField t = (JTextField)e.getSource();
-                    Ta.append(t.getText() + "\n"); // 텍스트필드의 문자열을 텍스트 영역 창에 추가 
-                    t.setText(""); // 현재 텍스트필드에 입력된 내용 지우기 
-                }
-            });
+   
     }
 
 }
