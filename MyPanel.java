@@ -54,18 +54,9 @@ public class MyPanel extends JPanel
                     ta.append(t.getText() + "\n"); // 텍스트필드의 문자열을 텍스트 영역 창에 추가 
                     t.setText(""); // 현재 텍스트필드에 입력된 내용 지우기 
                 }
-            });/**
-         * An example of a method - replace this comment with your own
-         *
-         * @param  y  a sample parameter for a method
-         * @return    the sum of x and y
-         */
-        public int sampleMethod(int y)
-        {
-        // put your code here
-        return y;
-    }
+            });
+        }
 
 }
-}
+
 
