@@ -13,14 +13,14 @@ public class MyPanel extends JPanel implements MouseListener
     private JTextField tf = new JTextField(20);
     private String [] grades = {"1학년", "2학년", "3학년", "4학년"}; 
     private JLabel gradeLabel = new JLabel(grades[0]);
-    private JComboBox<String> strCombo = new JComboBox<String> (grades);
+    //private JComboBox<String> strCombo = new JComboBox<String> (grades);
     public JPanel mp;
     public JButton btn;
     public JTextField mtfName;
     public JTextField mtfDept;
     public JTextField mtfAddress;
     public JTextArea Ta;
-    
+    private JComboBox<String>cbSchoolYear;
     
     public MyPanel(){
 
@@ -39,7 +39,7 @@ public class MyPanel extends JPanel implements MouseListener
         mtfAddress = new JTextField("서울시...", 20);
         this.add(mtfAddress);
 
-        JComboBox<String> cbSchoolYear = new JComboBox<String>();
+        cbSchoolYear = new JComboBox<String>();
         for(int i=0; i<grades.length; i++) {
             cbSchoolYear.addItem(grades[i]); // 콤보박스에 문자열 아이템 삽입 
         }
@@ -62,9 +62,12 @@ public class MyPanel extends JPanel implements MouseListener
     public void mousePressed(MouseEvent e){
         JButton btn = (JButton)e.getSource();
         if(btn.getText().equals("추가")){
-            Ta.append("이름 :" + mtfName.getText() + "\n");
-            Ta.append("학과 :" + mtfDept.getText() + "\n");
-            Ta.append("주소 :" + mtfAddress.getText() + "\n");
+            Ta.append("이름 : " + mtfName.getText() + "\n");
+            Ta.append("학과 : " + mtfDept.getText() + "\n");
+            Ta.append("주소 : " + mtfAddress.getText() + "\n");
+            int a = cbSchoolYear.getSelectedIndex();
+            Ta.append("학년 : " +cbSchoolYear.getItemAt(a) + "\n");
+            
             Ta.append("=============\n");
         }
         
