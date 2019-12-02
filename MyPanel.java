@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.event.*; 
 import java.awt.*; 
@@ -7,7 +8,7 @@ import java.awt.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class MyPanel extends JPanel
+public class MyPanel extends JPanel implements MouseListener
 {
     private JTextField tf = new JTextField(20);
     private String [] grades = {"1학년", "2학년", "3학년", "4학년"}; 
@@ -47,6 +48,15 @@ public class MyPanel extends JPanel
 
    
     }
+    
+    public void mouseClicked(MouseEvent e){};
+    public void mouseEntered(MouseEvent e){};
+    public void mouseExited(MouseEvent e){};
+    public void mousePressed(MouseEvent e){
+        
+    
+    };
+    public void mouseReleased(MouseEvent e){};
 
 }
 
