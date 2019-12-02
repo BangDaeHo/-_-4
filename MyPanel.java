@@ -43,7 +43,7 @@ public class MyPanel extends JPanel
         this.add(mb);
         this.add(clear);
         JTextArea Ta = new JTextArea(10, 24);
-        this.add(Ta);
+        this.add(new JScrollPane(Ta));
 
    
     }
