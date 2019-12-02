@@ -62,9 +62,10 @@ public class MyPanel extends JPanel implements MouseListener
     public void mousePressed(MouseEvent e){
         JButton btn = (JButton)e.getSource();
         if(btn.getText().equals("추가")){
-            Ta.append(mtfName.getText() + "\n");
-            Ta.append(mtfDept.getText() + "\n");
-            Ta.append(mtfAddress.getText() + "\n");
+            Ta.append("이름 :" + mtfName.getText() + "\n");
+            Ta.append("학과 :" + mtfDept.getText() + "\n");
+            Ta.append("주소 :" + mtfAddress.getText() + "\n");
+            Ta.append("=============\n");
         }
         
         if(btn.getText().equals("Clear")){
