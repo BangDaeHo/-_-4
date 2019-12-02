@@ -16,22 +16,27 @@ public class MyPanel extends JPanel implements MouseListener
     private JComboBox<String> strCombo = new JComboBox<String> (grades);
     public JPanel mp;
     public JButton btn;
-
+    public JTextField mtfName;
+    public JTextField mtfDept;
+    public JTextField mtfAddress;
+    public JTextArea Ta;
+    
+    
     public MyPanel(){
 
         JLabel MyName = new JLabel("이름");
         this.add(MyName);
-        JTextField mtfName = new JTextField(20);
+        mtfName = new JTextField(20);
         this.add(mtfName);
 
         JLabel MyDept = new JLabel("학과");
         this.add(MyDept);
-        JTextField mtfDept = new JTextField("글로벌소프트웨어학과", 20);
+        mtfDept = new JTextField("글로벌소프트웨어학과", 20);
         this.add(mtfDept);
 
         JLabel MyAddress = new JLabel("주소");
         this.add(MyAddress);
-        JTextField mtfAddress = new JTextField("서울시...", 20);
+        mtfAddress = new JTextField("서울시...", 20);
         this.add(mtfAddress);
 
         JComboBox<String> cbSchoolYear = new JComboBox<String>();
@@ -40,10 +45,12 @@ public class MyPanel extends JPanel implements MouseListener
         }
         this.add(cbSchoolYear);
         JButton mb = new JButton("추가");
+        mb.addMouseListener(this);
         JButton clear = new JButton("Clear");
+        clear.addMouseListener(this);
         this.add(mb);
         this.add(clear);
-        JTextArea Ta = new JTextArea(10, 24);
+        Ta = new JTextArea(10, 24);
         this.add(new JScrollPane(Ta));
 
    
@@ -53,8 +60,24 @@ public class MyPanel extends JPanel implements MouseListener
     public void mouseEntered(MouseEvent e){};
     public void mouseExited(MouseEvent e){};
     public void mousePressed(MouseEvent e){
+        JButton btn = (JButton)e.getSource();
+        if(btn.getText().equals("추가")){
+            Ta.append(mtfName.getText() + "\n");
+            Ta.append(mtfDept.getText() + "\n");
+            Ta.append(mtfAddress.getText() + "\n");
+        }
         
-    
+        if(btn.getText().equals("Clear")){
+            mtfName.setText("");
+            mtfDept.setText("");
+            mtfAddress.setText("");
+            Ta.setText("");
+        }
+
+        
+        
+        
+        
     };
     public void mouseReleased(MouseEvent e){};
 
