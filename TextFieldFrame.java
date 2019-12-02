@@ -1,33 +1,21 @@
-
+import javax.swing.*;
 /**
  * Write a description of class TextFieldFrame here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class TextFieldFrame
+public class TextFieldFrame extends JFrame
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class TextFieldFrame
-     */
-    public TextFieldFrame()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public TextFieldFrame(){
+        this.setTitle("실습_4");
+        this.setSize(250, 350);
+        
+        MyPanel mp = new MyPanel();
+        this.add(mp);
+        
+        
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
     }
 }
